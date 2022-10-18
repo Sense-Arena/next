@@ -1,4 +1,3 @@
-import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react';
 import path from 'node:path';
 import { defineConfig } from 'vite';
@@ -7,7 +6,6 @@ import { peerDependencies } from './package.json';
 
 export default defineConfig({
   plugins: [
-    vanillaExtractPlugin(),
     react({
       jsxRuntime: 'classic',
     }),
@@ -31,8 +29,7 @@ export default defineConfig({
       output: {
         globals: {
           '@react-spring/web': 'SpringWeb',
-          '@vanilla-extract/css': 'VanillaCss',
-          '@vanilla-extract/recipes': 'VanillaRecipes',
+          '@sensearena/ui': 'SAUI',
           react: 'React',
           'react-dom': 'ReactDOM',
           next: 'Next',
