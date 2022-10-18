@@ -27,7 +27,7 @@ export default defineConfig({
       fileName: format => `@sa-next.${format}.js`,
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)],
+      external: [...Object.keys(peerDependencies), 'next/image', 'next/head'],
       output: {
         globals: {
           '@react-spring/web': 'SpringWeb',
@@ -36,6 +36,8 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
           next: 'Next',
+          'next/image': 'NextImg',
+          'next/head': 'NextHead',
         },
       },
     },
